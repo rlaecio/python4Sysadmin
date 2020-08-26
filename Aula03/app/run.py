@@ -17,7 +17,7 @@ app.register_blueprint(mensagens_routes)
 @app.route("/")
 def index():
     retorno = {
-        "app" : "Sistema de mensagens",
+        "app" : "Sistema de testes api",
         "version": 1.0
     }
     
