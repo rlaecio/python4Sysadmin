@@ -75,3 +75,4 @@ def deleteUsuarios():
         
     except Exception as e:
         return "Erro: {}".format(e)
+    
