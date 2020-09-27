@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+import jenkins
 
 jenkins_routes = Blueprint("jenkins", __name__, url_prefix="/jenkins")
 
