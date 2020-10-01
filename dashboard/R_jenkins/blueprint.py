@@ -24,7 +24,6 @@ def index():
 
 @jenkins_routes.route("/update/<string:job_name>") 
 def update(job_name):
-   
     if not "logged" in session or not session["logged"]:
         return redirect(url_for("index"))
     try:
@@ -44,9 +43,9 @@ def update(job_name):
 
 @jenkins_routes.route("/reconfig", methods=["POST"]) 
 def reconfig():
-    
     if not "logged" in session or not session["logged"]:
         return redirect(url_for("index"))
+    
     data = request.form
     try:
         jenkins_con = jenkins.Jenkins(
@@ -63,7 +62,6 @@ def reconfig():
 
 @jenkins_routes.route("/build/<string:job_name>") 
 def build(job_name):
-    
     if not "logged" in session or not session["logged"]:
         return redirect(url_for("index"))
     try:

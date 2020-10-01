@@ -35,3 +35,13 @@ def login():
         
     except Exception as error:
         return "{}".format(error)
+
+
+@ldap_routes.route("/logout")
+def logout():
+    
+    if not "logged" in session or not session["logged"]:
+        return redirect(url_for("index"))
+    else:
+        session.pop("logged")
+        return redirect(url_for("index"))
