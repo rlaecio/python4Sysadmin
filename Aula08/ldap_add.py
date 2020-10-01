@@ -14,7 +14,7 @@ ldap_con=Connection(
 )
 ldap_con.bind()
 
-md5json = md5("senhaPadrao".encode("utf-8")).digest()
+md5json = md5("senhapadrao".encode("utf-8")).digest()
 user = {
     "cn": "joao",
     "sn": "hummel",
@@ -23,7 +23,7 @@ user = {
     "gidNumber": "123",
     "uid": "joao",
     "homeDirectory": "/home/joao",
-    "userPassword": "{MD%}" + b2a_base64(md5json).decode("utf-8")
+    "userPassword": "{MD5}" + b2a_base64(md5json).decode("utf-8")
 }
 objectClass = ["top", "person", "inetOrgPerson", "posixAccount", "organizationalPerson"]
 dn = "uid={},dc=prowene,dc=net".format(user["mail"])
