@@ -12,6 +12,12 @@ def index():
     try:
         usuarios = requests.get("http://192.168.1.9/api/v4/users?private_token={}".format(token))
         usuarios = usuarios.json()
+        
+        projetos = requests.get("http://192.168.1.9/api/v4/projects?private_token={}".format(token))
+        projetos = projetos.json()
     except Exception as error:
         return "{}".format(error)
-    return render_template("gitlab.html", users=usuarios)
+    return render_template("gitlab.html", users=usuarios, projects=projetos)
+
+
+

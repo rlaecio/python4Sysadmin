@@ -42,12 +42,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for project in projects %}
                         <tr>
-                            <td>==NOME DO PROJETO==</td>
-                            <td>==SSH DO PROJETO==</td>
-                            <td>==USERNAME DO DONO DO PROJETO==</td>
-                            <td>==CAMINHO DO PROJETO==</td>
+                            <td>{{ project.name}}</td>
+                            <td>{{ project.ssh_url_to_repo }}</td>
+                            <td>{{ project.owner.username }}</td>
+                            <td>{{ project.web_url }}</td>
                         </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
