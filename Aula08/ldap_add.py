@@ -12,7 +12,7 @@ ldap_con=Connection(
     "cn={},dc=prowene,dc=net".format(username),
     password
 )
-print(ldap_con.bind())
+ldap_con.bind()
 
 md5json = md5("senhaPadrao".encode("utf-8")).digest()
 user = {
