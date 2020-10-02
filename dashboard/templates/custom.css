@@ -1,0 +1,12 @@
+
+   tr:nth-child(odd) {
+    background-color: lightskyblue;
+    }
+
+   tr:nth-child(even) {
+    background-color: lightpink;
+    }
+
+    th {
+       background-color: lightseagreen;
+    }
